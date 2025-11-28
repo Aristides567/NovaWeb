@@ -7,18 +7,15 @@ function CheckoutPage({ items, onClearCart }) {
   const navigate = useNavigate()
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({
-    // Datos personales
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
-    // Dirección
     address: '',
     city: '',
     state: '',
     zipCode: '',
     country: 'México',
-    // Pago
     paymentMethod: 'credit-card',
     cardNumber: '',
     cardName: '',
@@ -31,13 +28,12 @@ function CheckoutPage({ items, onClearCart }) {
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = items.length > 0 ? 9 : 0
-  const tax = subtotal * 0.16 // 16% IVA
+  const tax = subtotal * 0.16
   const total = subtotal + shipping + tax
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-    // Limpiar error del campo
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }))
     }
@@ -111,10 +107,8 @@ function CheckoutPage({ items, onClearCart }) {
 
     setProcessing(true)
 
-    // Simular procesamiento de pago
     await new Promise(resolve => setTimeout(resolve, 2000))
 
-    // Crear orden simulada
     const order = {
       id: `ORD-${Date.now()}`,
       date: new Date().toISOString(),
@@ -143,15 +137,11 @@ function CheckoutPage({ items, onClearCart }) {
       },
     }
 
-    // Guardar orden en localStorage
     const orders = JSON.parse(localStorage.getItem('orders') || '[]')
     orders.push(order)
     localStorage.setItem('orders', JSON.stringify(orders))
 
-    // Limpiar carrito
     onClearCart()
-
-    // Redirigir a página de confirmación
     navigate('/confirmacion', { state: { order } })
   }
 
@@ -183,7 +173,6 @@ function CheckoutPage({ items, onClearCart }) {
     <PageTransition>
       <section className="relative bg-gradient-to-br from-slate-50 via-white to-purple-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/10 py-10 sm:py-12 lg:py-16 min-h-screen transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -198,7 +187,6 @@ function CheckoutPage({ items, onClearCart }) {
             </p>
           </motion.div>
 
-          {/* Progress bar */}
           <div className="mb-8">
             <div className="flex items-center justify-between">
               {[1, 2, 3].map((s) => (
@@ -226,10 +214,8 @@ function CheckoutPage({ items, onClearCart }) {
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
-            {/* Form */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Step 1: Datos personales */}
                 {step === 1 && (
                   <motion.div
                     className="rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6 shadow-lg"
@@ -297,7 +283,6 @@ function CheckoutPage({ items, onClearCart }) {
                   </motion.div>
                 )}
 
-                {/* Step 2: Dirección */}
                 {step === 2 && (
                   <motion.div
                     className="rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6 shadow-lg"
@@ -379,7 +364,6 @@ function CheckoutPage({ items, onClearCart }) {
                   </motion.div>
                 )}
 
-                {/* Step 3: Pago */}
                 {step === 3 && (
                   <motion.div
                     className="rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6 shadow-lg"
@@ -505,7 +489,6 @@ function CheckoutPage({ items, onClearCart }) {
                   </motion.div>
                 )}
 
-                {/* Navigation buttons */}
                 <div className="flex gap-3">
                   {step > 1 && (
                     <button
@@ -537,7 +520,6 @@ function CheckoutPage({ items, onClearCart }) {
               </form>
             </div>
 
-            {/* Order summary */}
             <aside className="lg:sticky lg:top-24 h-fit">
               <div className="rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6 shadow-lg">
                 <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-4">

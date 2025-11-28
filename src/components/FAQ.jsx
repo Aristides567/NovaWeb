@@ -15,7 +15,6 @@ function FAQ() {
       className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 sm:py-20 lg:py-24 transition-colors duration-300"
       aria-label="Preguntas frecuentes"
     >
-      {/* Overlays decorativos */}
       <div className="absolute -top-24 right-1/3 h-80 w-80 rounded-full bg-gradient-to-bl from-blue-500/10 to-transparent blur-3xl opacity-50" aria-hidden="true" />
       <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-gradient-to-tr from-purple-500/10 to-transparent blur-3xl opacity-50" aria-hidden="true" />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

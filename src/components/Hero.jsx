@@ -3,15 +3,12 @@ import { motion } from 'framer-motion'
 function Hero({ onPrimaryAction, onSecondaryAction }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/20 dark:from-slate-950 dark:via-purple-950/20 dark:to-slate-900 px-4 pb-16 pt-16 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-28 lg:pt-24 transition-colors duration-300">
-      {/* Overlays decorativos */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(192,38,211,0.2),_rgba(162,28,175,0.1),_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_right,_rgba(192,38,211,0.35),_rgba(162,28,175,0.15),_transparent_60%)]" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(232,121,249,0.15),_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_left,_rgba(232,121,249,0.25),_transparent_50%)]" aria-hidden="true" />
       
-      {/* Círculos decorativos */}
       <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-brand-500/20 to-purple-500/20 blur-3xl opacity-70 dark:opacity-50" aria-hidden="true" />
       <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr from-pink-500/15 to-brand-500/15 blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
       
-      {/* Mesh gradient overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDE5MiwzOCwyMTEsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40 dark:opacity-20" aria-hidden="true" />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-24">
         <motion.div
@@ -21,7 +18,14 @@ function Hero({ onPrimaryAction, onSecondaryAction }) {
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           <div
-            className="inline-flex items-center gap-2 rounded-full border border-brand-500/40 dark:border-brand-400/40 bg-gradient-to-r from-brand-50/90 to-purple-50/90 dark:from-brand-950/40 dark:to-purple-950/40 px-3 py-1.5 text-xs font-medium text-brand-700 dark:text-brand-300 backdrop-blur-md shadow-lg shadow-brand-500/20 dark:shadow-brand-500/30 transition-all hover:shadow-xl hover:shadow-brand-500/30 dark:hover:shadow-brand-500/40"
+            className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/80 
+            bg-gradient-to-r from-pink-200/90 via-fuchsia-500/80 to-purple-700/90 
+            dark:from-fuchsia-300/40 dark:via-fuchsia-500/70 dark:to-purple-900/80 
+            px-3 py-1.5 text-xs font-medium 
+            text-fuchsia-800 dark:text-pink-100
+            backdrop-blur-md 
+            shadow-[0_0_20px_rgba(217,70,239,0.6)] 
+            transition-all hover:shadow-xl hover:shadow-pink-500/40"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             <span>Nuevo • Plataforma SaaS para comercio electrónico</span>

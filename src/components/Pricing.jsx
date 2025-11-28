@@ -10,7 +10,6 @@ function Pricing() {
       className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/20 py-16 sm:py-20 lg:py-24 transition-colors duration-300"
       aria-label="Planes de precios"
     >
-      {/* Overlays decorativos */}
       <div className="absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-gradient-to-br from-brand-400/20 via-purple-400/15 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
       <div className="absolute top-1/2 -right-48 h-[32rem] w-[32rem] rounded-full bg-gradient-to-bl from-purple-500/15 via-pink-500/10 to-transparent blur-3xl opacity-50 dark:opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(192,38,211,0.05),_transparent_60%)]" aria-hidden="true" />

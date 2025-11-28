@@ -12,7 +12,6 @@ function CartPage({ items, onIncrement, onDecrement, onRemove, onContinueShoppin
   return (
     <PageTransition>
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/10 py-10 sm:py-12 lg:py-16 transition-colors duration-300">
-      {/* Overlays decorativos */}
       <div className="absolute top-0 left-1/3 h-80 w-80 rounded-full bg-gradient-to-br from-brand-500/15 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-gradient-to-tl from-purple-500/15 to-transparent blur-3xl opacity-50 dark:opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(192,38,211,0.05),_transparent_60%)]" aria-hidden="true" />
@@ -96,7 +95,6 @@ function CartPage({ items, onIncrement, onDecrement, onRemove, onContinueShoppin
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
                     <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start">
-                      {/* Image */}
                       <div className="relative h-24 w-full shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-950 sm:h-20 sm:w-20 transition-colors">
                         {item.image ? (
                           <img
@@ -116,8 +114,7 @@ function CartPage({ items, onIncrement, onDecrement, onRemove, onContinueShoppin
                           </span>
                         </div>
                       </div>
-
-                      {/* Details */}
+                      
                       <div className="flex flex-1 flex-col gap-2">
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex-1">
@@ -139,13 +136,11 @@ function CartPage({ items, onIncrement, onDecrement, onRemove, onContinueShoppin
                         </div>
 
                         <div className="flex flex-wrap items-center justify-between gap-3">
-                          {/* Price */}
                           <div className="flex items-baseline gap-1.5">
                             <span className="text-lg font-bold text-brand-400 sm:text-xl">${item.price}</span>
                             <span className="text-xs text-slate-400">/mes</span>
                           </div>
 
-                          {/* Quantity controls */}
                           <div className="flex items-center gap-3">
                             <span className="text-xs text-slate-600 dark:text-slate-400 transition-colors">Cantidad:</span>
                             <div className="inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-900/80 px-1 py-1 transition-colors">
@@ -178,7 +173,6 @@ function CartPage({ items, onIncrement, onDecrement, onRemove, onContinueShoppin
                           </div>
                         </div>
 
-                        {/* Subtotal */}
                         <div className="flex items-center justify-between border-t border-slate-200 dark:border-slate-800/50 pt-2 transition-colors">
                           <span className="text-xs text-slate-600 dark:text-slate-400 transition-colors">Subtotal:</span>
                           <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 transition-colors">${(item.price * item.quantity).toFixed(2)}</span>

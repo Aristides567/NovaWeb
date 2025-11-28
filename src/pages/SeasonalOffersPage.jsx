@@ -7,11 +7,9 @@ function SeasonalOffersPage({ onAddToCart }) {
   return (
     <PageTransition>
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50/50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/20 py-10 sm:py-12 lg:py-16 transition-colors duration-300">
-        {/* Overlays decorativos */}
         <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
         <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-gradient-to-tl from-blue-500/10 to-transparent blur-3xl opacity-50 dark:opacity-30" aria-hidden="true" />
 
-        {/* Hero con tema estacional */}
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -32,7 +30,6 @@ function SeasonalOffersPage({ onAddToCart }) {
             </p>
           </motion.div>
 
-          {/* Banners promocionales */}
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <motion.div
               className="relative overflow-hidden rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-red-500 to-red-600 p-8 shadow-2xl"
@@ -65,7 +62,6 @@ function SeasonalOffersPage({ onAddToCart }) {
             </motion.div>
           </div>
 
-          {/* Categorías por temporada */}
           <motion.div
             className="mt-16"
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +84,6 @@ function SeasonalOffersPage({ onAddToCart }) {
                   transition={{ duration: 0.45, delay: index * 0.08 }}
                   whileHover={{ y: -4 }}
                 >
-                  {/* Badge de temporada */}
                   <div className="absolute top-3 left-3 z-10 rounded-full bg-purple-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
                     {product.season}
                   </div>
@@ -134,7 +129,6 @@ function SeasonalOffersPage({ onAddToCart }) {
             </div>
           </motion.div>
 
-          {/* Galería de productos destacados */}
           <motion.div
             className="mt-16 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/80 to-slate-50/80 dark:from-slate-900/70 dark:to-slate-800/50 p-8 backdrop-blur-sm shadow-lg"
             initial={{ opacity: 0, y: 20 }}

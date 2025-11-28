@@ -17,7 +17,7 @@ function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-gradient-to-r from-brand-50/90 to-purple-50/90 dark:from-brand-950/40 dark:to-purple-950/40 px-4 py-2 text-xs font-medium text-brand-700 dark:text-brand-300 backdrop-blur-md shadow-lg mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/80 bg-gradient-to-r from-pink-200/90 via-fuchsia-500/80 to-purple-700/90 dark:from-fuchsia-300/40 dark:via-fuchsia-500/70 dark:to-purple-900/80 px-5 py-2 text-xs font-semibold text-fuchsia-800 dark:text-pink-100 backdrop-blur-md shadow-[0_0_20px_rgba(217,70,239,0.6)] mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
               <span>Sobre NovaWeb</span>
             </div>
@@ -107,30 +107,37 @@ function AboutPage() {
           </motion.div>
 
           <div className="relative">
-            {/* Línea vertical */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-500 via-purple-500 to-brand-500 opacity-30" aria-hidden="true" />
-            
-            {MILESTONES.map((milestone, index) => (
-              <motion.div
-                key={milestone.year}
-                className="relative pl-20 pb-12 last:pb-0"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {/* Dot */}
-                <div className="absolute left-6 top-0 h-5 w-5 rounded-full border-4 border-white dark:border-slate-900 bg-brand-500 shadow-lg shadow-brand-500/50" />
-                
-                <div className="rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6 shadow-md backdrop-blur-sm hover:shadow-lg transition-shadow">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <span className="text-2xl font-bold text-brand-600 dark:text-brand-400">{milestone.year}</span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400">{milestone.description}</span>
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.08),_transparent_55%)]" aria-hidden="true" />
+
+            <div className="relative grid gap-8 sm:gap-10">
+              {MILESTONES.map((milestone, index) => (
+                <motion.article
+                  key={milestone.year}
+                  className="relative overflow-hidden rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-white/90 dark:bg-slate-900/80 shadow-lg backdrop-blur-sm px-5 py-6 sm:px-7 sm:py-7"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+
+                  <div className="relative flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                    <div className="inline-flex items-center gap-3">
+                      <span className="inline-flex items-center rounded-full bg-brand-50 dark:bg-brand-950/40 px-3 py-1 text-xs font-semibold text-brand-700 dark:text-brand-300 border border-brand-100/60 dark:border-brand-900/60">
+                        {milestone.year}
+                      </span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400">
+                        {milestone.description}
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50">{milestone.event}</h3>
-                </div>
-              </motion.div>
-            ))}
+
+                  <p className="relative mt-3 text-base font-semibold text-slate-900 dark:text-slate-50">
+                    {milestone.event}
+                  </p>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -187,7 +194,6 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Final */}
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-600 to-purple-600 py-16 sm:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1),_transparent_70%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

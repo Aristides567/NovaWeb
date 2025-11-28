@@ -4,7 +4,6 @@ import { FEATURES } from '../data/storeData.js'
 function Features() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-purple-50/20 to-white dark:from-slate-950 dark:via-purple-950/10 dark:to-slate-950 py-16 sm:py-20 lg:py-24 transition-colors duration-300">
-      {/* Overlays decorativos */}
       <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-gradient-to-bl from-purple-500/10 to-transparent blur-3xl opacity-50" aria-hidden="true" />
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-gradient-to-tr from-brand-500/10 to-transparent blur-3xl opacity-50" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(192,38,211,0.03),_transparent_70%)]" aria-hidden="true" />

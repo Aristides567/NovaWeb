@@ -25,7 +25,6 @@ function Testimonials() {
       className="relative overflow-hidden bg-gradient-to-br from-purple-50/30 via-white to-slate-50 dark:from-purple-950/20 dark:via-slate-950 dark:to-slate-900 py-16 sm:py-20 lg:py-24 transition-colors duration-300"
       aria-label="Testimonios de clientes"
     >
-      {/* Overlays decorativos */}
       <div className="absolute top-20 -left-32 h-72 w-72 rounded-full bg-gradient-to-br from-emerald-500/15 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
       <div className="absolute bottom-20 right-0 h-80 w-80 rounded-full bg-gradient-to-bl from-purple-500/15 to-transparent blur-3xl opacity-50 dark:opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.05),_transparent_50%)]" aria-hidden="true" />
@@ -42,7 +41,7 @@ function Testimonials() {
               Historias de crecimiento real
             </h2>
             <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base transition-colors">
-              Marcas de todo tipo utilizan CommerceX para ofrecer experiencias de compra memorables.
+              Marcas de todo tipo utilizan Commerce para ofrecer experiencias de compra memorables.
             </p>
           </div>
           <div className="hidden items-center gap-1 text-xs text-slate-600 dark:text-slate-400 sm:flex transition-colors">

@@ -8,7 +8,6 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             className="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/90 backdrop-blur-md transition-colors"
             initial={{ opacity: 0 }}
@@ -18,7 +17,6 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
             aria-hidden="true"
           />
 
-          {/* Modal */}
           <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto">
             <motion.div
               className="relative w-full max-w-4xl bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-slate-800/95 sm:rounded-2xl shadow-2xl shadow-brand-500/20 dark:shadow-brand-500/30 border-t sm:border border-slate-200/60 dark:border-slate-800/60 overflow-hidden sm:my-8 min-h-screen sm:min-h-0 backdrop-blur-xl transition-colors"
@@ -31,7 +29,6 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
               aria-modal="true"
               aria-labelledby="modal-title"
             >
-              {/* Close button */}
               <button
                 type="button"
                 onClick={onClose}
@@ -41,9 +38,7 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
                 <IconClose />
               </button>
 
-              {/* Content */}
               <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0">
-                {/* Image section */}
                 <div className="relative h-56 sm:h-64 lg:h-auto bg-slate-100 dark:bg-slate-950 order-1 transition-colors">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 via-transparent to-slate-950/50" />
                   <img
@@ -62,10 +57,8 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
                   </div>
                 </div>
 
-                {/* Details section */}
                 <div className="flex flex-col p-4 sm:p-6 lg:p-8 order-2 bg-white dark:bg-transparent transition-colors">
                   <div className="flex-1 space-y-4 sm:space-y-6">
-                    {/* Header */}
                     <div className="space-y-1.5 sm:space-y-2">
                       <h2 id="modal-title" className="text-xl font-semibold text-slate-900 dark:text-slate-50 sm:text-2xl lg:text-3xl transition-colors">
                         {product.name}
@@ -76,12 +69,10 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base transition-colors">
                       {product.description}
                     </p>
 
-                    {/* Features */}
                     {product.features && product.features.length > 0 && (
                       <div className="space-y-2.5 sm:space-y-3">
                         <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-400 transition-colors">
@@ -106,8 +97,7 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
                       </div>
                     )}
                   </div>
-
-                  {/* Actions */}
+                  
                   <div className="mt-4 sm:mt-6 flex flex-col gap-2.5 sm:gap-3 border-t border-slate-200 dark:border-slate-800 pt-4 sm:pt-6 transition-colors">
                     <motion.button
                       type="button"

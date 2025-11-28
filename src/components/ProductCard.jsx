@@ -19,7 +19,6 @@ function ProductCard({ product, onAddToCart, layout = 'grid' }) {
         whileHover={{ y: -4 }}
         onClick={() => setIsModalOpen(true)}
       >
-      {/* Overlay decorativo */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-500/0 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
       <div
         className={

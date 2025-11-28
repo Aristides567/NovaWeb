@@ -9,7 +9,7 @@ export const NAV_ITEMS = [
 
 export const FEATURES = [
   {
-    title: 'Checkout en un clic',
+    title: 'Checkout en un click',
     description: 'Reduce la fricción y aumenta la conversión con un proceso de pago optimizado.',
   },
   {
@@ -130,22 +130,21 @@ export const TEAM_MEMBERS = [
     id: 1,
     name: 'Aristides Fuentes',
     role: 'CEO & Fundador',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80',
+    image: 'https://i.pinimg.com/736x/a8/56/c5/a856c58fbcb63e120d23d787c0dbc4a2.jpg',
     bio: 'Desarrollador de software con 3+ años de experiencia.',
   },
   {
     id: 2,
-    name: 'Rene Vasquez',
+    name: 'René Vásquez',
     role: 'CTO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    bio: 'Arquitecto de software especializado en plataformas SaaS escalables.',
+    image: 'https://i.pinimg.com/736x/6a/b3/53/6ab35306375da285365f832ed4b24e5c.jpg',
+    bio: 'Desarrollador de software especializado en la creación de paginas web.',
   }
 ]
 
 export const MILESTONES = [
-  { year: '2023', event: 'Fundación de NovaWeb', description: 'Inicio de nuestra aventura emprendedora' },
-  { year: '2024', event: 'Primeros clientes', description: 'Lanzamiento oficial de la plataforma' },
-  { year: '2024', event: 'Desarrollo del MVP', description: 'Primera versión funcional del producto' },
+  { year: '2022', event: 'Fundación de NovaWeb', description: 'Inicio de nuestra aventura emprendedora' },
+  { year: '2023', event: 'Primeros clientes', description: 'Lanzamiento oficial de la plataforma' },
   { year: '2024', event: 'Mejoras continuas', description: 'Optimización basada en feedback de usuarios' },
   { year: '2025', event: 'Crecimiento activo', description: 'Expandiendo nuestra base de clientes' },
 ]

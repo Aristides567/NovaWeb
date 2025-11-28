@@ -13,7 +13,6 @@ function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      {/* Icono de Sol (modo claro) */}
       <motion.svg
         className="absolute h-5 w-5"
         fill="none"
@@ -35,7 +34,6 @@ function ThemeToggle() {
         />
       </motion.svg>
 
-      {/* Icono de Luna (modo oscuro) */}
       <motion.svg
         className="absolute h-5 w-5"
         fill="none"

@@ -20,7 +20,6 @@ function OrderConfirmationPage() {
     <PageTransition>
       <section className="relative bg-gradient-to-br from-slate-50 via-white to-purple-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/10 py-16 min-h-screen transition-colors duration-300">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          {/* Success animation */}
           <motion.div
             className="text-center mb-8"
             initial={{ scale: 0 }}
@@ -50,14 +49,12 @@ function OrderConfirmationPage() {
             </motion.p>
           </motion.div>
 
-          {/* Order details */}
           <motion.div
             className="rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/90 dark:bg-slate-900/80 shadow-xl overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            {/* Header */}
             <div className="bg-gradient-to-r from-brand-600 to-purple-600 px-6 py-4">
               <div className="flex items-center justify-between text-white">
                 <div>
@@ -71,9 +68,7 @@ function OrderConfirmationPage() {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-6 space-y-6">
-              {/* Customer info */}
               <div>
                 <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-3">
                   Información del cliente
@@ -94,7 +89,6 @@ function OrderConfirmationPage() {
                 </div>
               </div>
 
-              {/* Shipping address */}
               <div className="border-t border-slate-200 dark:border-slate-800 pt-6">
                 <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-3">
                   Dirección de envío
@@ -106,7 +100,6 @@ function OrderConfirmationPage() {
                 </div>
               </div>
 
-              {/* Items */}
               <div className="border-t border-slate-200 dark:border-slate-800 pt-6">
                 <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-3">
                   Productos
@@ -133,7 +126,6 @@ function OrderConfirmationPage() {
                 </div>
               </div>
 
-              {/* Totals */}
               <div className="border-t border-slate-200 dark:border-slate-800 pt-6">
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between text-slate-600 dark:text-slate-400">
@@ -155,7 +147,6 @@ function OrderConfirmationPage() {
                 </div>
               </div>
 
-              {/* Payment info */}
               <div className="bg-emerald-50 dark:bg-emerald-950/20 rounded-lg p-4 text-sm">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white">
@@ -174,7 +165,6 @@ function OrderConfirmationPage() {
               </div>
             </div>
 
-            {/* Footer */}
             <div className="bg-slate-50 dark:bg-slate-900/50 px-6 py-4 border-t border-slate-200 dark:border-slate-800">
               <p className="text-sm text-slate-600 dark:text-slate-400 text-center">
                 Recibirás un correo de confirmación en <span className="font-medium text-slate-900 dark:text-slate-50">{order.customer.email}</span>
@@ -182,7 +172,6 @@ function OrderConfirmationPage() {
             </div>
           </motion.div>
 
-          {/* Actions */}
           <motion.div
             className="mt-8 flex flex-col sm:flex-row gap-3 justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -203,7 +192,6 @@ function OrderConfirmationPage() {
             </button>
           </motion.div>
 
-          {/* Next steps */}
           <motion.div
             className="mt-12 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/70 p-6"
             initial={{ opacity: 0, y: 20 }}

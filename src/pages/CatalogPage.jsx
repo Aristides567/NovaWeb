@@ -27,7 +27,6 @@ function CatalogPage({ onAddToCart }) {
   return (
     <PageTransition>
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-10 sm:py-12 lg:py-16 transition-colors duration-300">
-      {/* Overlays decorativos */}
       <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-gradient-to-bl from-brand-500/10 via-purple-500/5 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true" />
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-gradient-to-tr from-purple-500/10 to-transparent blur-3xl opacity-50 dark:opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(192,38,211,0.03),_transparent_70%)]" aria-hidden="true" />
