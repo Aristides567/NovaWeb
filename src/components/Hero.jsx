@@ -38,7 +38,7 @@ function Hero({ onPrimaryAction, onSecondaryAction }) {
           <p
             className="max-w-xl text-balance text-sm text-slate-600 dark:text-slate-300 sm:text-base transition-colors"
           >
-            CommerceX te ayuda a lanzar, optimizar y escalar tu tienda online con analytics en tiempo real,
+            NovaWeb te ayuda a lanzar, optimizar y escalar tu tienda online con analytics en tiempo real,
             automatizaciones inteligentes y un diseño pensado para maximizar la conversión en cualquier dispositivo.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

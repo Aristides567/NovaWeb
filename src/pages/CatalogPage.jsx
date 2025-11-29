@@ -41,7 +41,7 @@ function CatalogPage({ onAddToCart }) {
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-500 dark:text-brand-300 transition-colors">Catálogo</p>
             <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50 sm:text-3xl transition-colors">
-              Explora los módulos de CommerceX
+              Explora los módulos de NovaWeb
             </h1>
             <p className="mt-2 max-w-xl text-sm text-slate-600 dark:text-slate-300 transition-colors">
               Combina suscripciones, módulos adicionales y servicios para diseñar la solución perfecta para tu

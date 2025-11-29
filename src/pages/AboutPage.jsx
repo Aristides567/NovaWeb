@@ -158,7 +158,7 @@ function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 grid-cols-2">
             {TEAM_MEMBERS.map((member, index) => (
               <motion.article
                 key={member.id}
