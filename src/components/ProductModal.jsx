@@ -17,9 +17,9 @@ function ProductModal({ product, isOpen, onClose, onAddToCart }) {
             aria-hidden="true"
           />
 
-          <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto px-4 sm:px-6">
             <motion.div
-              className="relative w-full max-w-4xl bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-slate-800/95 sm:rounded-2xl shadow-2xl shadow-brand-500/20 dark:shadow-brand-500/30 border-t sm:border border-slate-200/60 dark:border-slate-800/60 overflow-hidden sm:my-8 min-h-screen sm:min-h-0 backdrop-blur-xl transition-colors"
+              className="relative w-full max-w-4xl bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-slate-800/95 sm:rounded-2xl shadow-2xl shadow-brand-500/20 dark:shadow-brand-500/30 border-t sm:border border-slate-200/60 dark:border-slate-800/60 max-h-[90vh] overflow-y-auto my-6 sm:my-8 backdrop-blur-xl transition-colors"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}

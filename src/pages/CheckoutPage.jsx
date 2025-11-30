@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition.jsx'
+import { sendOrderEmail } from '../services/emailService.js'
 
 function CheckoutPage({ items, onClearCart }) {
   const navigate = useNavigate()
@@ -136,6 +137,8 @@ function CheckoutPage({ items, onClearCart }) {
         total,
       },
     }
+
+    await sendOrderEmail(order)
 
     const orders = JSON.parse(localStorage.getItem('orders') || '[]')
     orders.push(order)
@@ -383,8 +386,8 @@ function CheckoutPage({ items, onClearCart }) {
                         <div className="grid gap-3 sm:grid-cols-2">
                           <label className={`flex items-center gap-3 rounded-lg border-2 p-4 cursor-pointer transition ${
                             formData.paymentMethod === 'credit-card'
-                              ? 'border-brand-600 bg-brand-50 dark:bg-brand-950/20'
-                              : 'border-slate-300 dark:border-slate-700'
+                              ? 'border-brand-600 bg-white dark:bg-slate-800'
+                              : 'border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900'
                           }`}>
                             <input
                               type="radio"
@@ -396,13 +399,13 @@ function CheckoutPage({ items, onClearCart }) {
                             />
                             <div>
                               <div className="font-medium text-slate-900 dark:text-slate-50">Tarjeta de crédito</div>
-                              <div className="text-xs text-slate-600 dark:text-slate-400">Visa, Mastercard, AMEX</div>
+                              <div className="text-xs text-slate-600 dark:text-slate-200">Visa, Mastercard, AMEX</div>
                             </div>
                           </label>
                           <label className={`flex items-center gap-3 rounded-lg border-2 p-4 cursor-pointer transition ${
                             formData.paymentMethod === 'paypal'
-                              ? 'border-brand-600 bg-brand-50 dark:bg-brand-950/20'
-                              : 'border-slate-300 dark:border-slate-700'
+                              ? 'border-brand-600 bg-white dark:bg-slate-800'
+                              : 'border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900'
                           }`}>
                             <input
                               type="radio"

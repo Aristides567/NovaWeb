@@ -3,10 +3,13 @@ import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition.jsx'
 import { SPECIAL_OFFERS } from '../data/storeData.js'
 import { IconStar } from '../components/Icons.jsx'
+import ProductModal from '../components/ProductModal.jsx'
 
 function SpecialOffersPage({ onAddToCart }) {
   const [category, setCategory] = useState('Todas')
   const [timeLeft, setTimeLeft] = useState({})
+  const [selectedOffer, setSelectedOffer] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const categories = useMemo(
     () => ['Todas', ...Array.from(new Set(SPECIAL_OFFERS.map((p) => p.category)))],
@@ -94,12 +97,16 @@ function SpecialOffersPage({ onAddToCart }) {
             {filtered.map((offer, index) => (
               <motion.article
                 key={offer.id}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/90 to-slate-50/90 dark:from-slate-900/80 dark:to-slate-800/60 shadow-lg hover:shadow-xl hover:shadow-red-500/20 dark:hover:shadow-red-500/30 transition-all"
+                className="group relative overflow-hidden rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/90 to-slate-50/90 dark:from-slate-900/80 dark:to-slate-800/60 shadow-lg hover:shadow-xl hover:shadow-red-500/20 dark:hover:shadow-red-500/30 transition-all cursor-pointer"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
                 whileHover={{ y: -4 }}
+                onClick={() => {
+                  setSelectedOffer(offer)
+                  setIsModalOpen(true)
+                }}
               >
                 <div className="absolute top-3 right-3 z-10 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
                   -{offer.discount}%
@@ -157,7 +164,10 @@ function SpecialOffersPage({ onAddToCart }) {
 
                   <button
                     type="button"
-                    onClick={() => onAddToCart && onAddToCart(offer)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onAddToCart && onAddToCart(offer)
+                    }}
                     className="mt-4 w-full rounded-full bg-gradient-to-r from-red-600 to-orange-600 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-500/60 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
                   >
                     Aprovechar oferta
@@ -166,6 +176,16 @@ function SpecialOffersPage({ onAddToCart }) {
               </motion.article>
             ))}
           </div>
+          <ProductModal
+            product={selectedOffer}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            onAddToCart={(product) => {
+              if (onAddToCart) {
+                onAddToCart(product)
+              }
+            }}
+          />
         </div>
       </section>
     </PageTransition>

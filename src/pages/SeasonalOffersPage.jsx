@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition.jsx'
 import { SEASONAL_PRODUCTS } from '../data/storeData.js'
 import { IconStar } from '../components/Icons.jsx'
+import ProductModal from '../components/ProductModal.jsx'
 
 function SeasonalOffersPage({ onAddToCart }) {
+  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <PageTransition>
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50/50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-purple-950/20 py-10 sm:py-12 lg:py-16 transition-colors duration-300">
@@ -77,12 +82,16 @@ function SeasonalOffersPage({ onAddToCart }) {
               {SEASONAL_PRODUCTS.map((product, index) => (
                 <motion.article
                   key={product.id}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/90 to-slate-50/90 dark:from-slate-900/80 dark:to-slate-800/60 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/90 to-slate-50/90 dark:from-slate-900/80 dark:to-slate-800/60 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all cursor-pointer"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
                   whileHover={{ y: -4 }}
+                  onClick={() => {
+                    setSelectedProduct(product)
+                    setIsModalOpen(true)
+                  }}
                 >
                   <div className="absolute top-3 left-3 z-10 rounded-full bg-purple-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
                     {product.season}
@@ -118,7 +127,10 @@ function SeasonalOffersPage({ onAddToCart }) {
 
                     <button
                       type="button"
-                      onClick={() => onAddToCart && onAddToCart(product)}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onAddToCart && onAddToCart(product)
+                      }}
                       className="mt-4 w-full rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-purple-500/50 transition-all hover:shadow-2xl hover:shadow-purple-500/60 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500"
                     >
                       Agregar al carrito
@@ -128,6 +140,17 @@ function SeasonalOffersPage({ onAddToCart }) {
               ))}
             </div>
           </motion.div>
+
+          <ProductModal
+            product={selectedProduct}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            onAddToCart={(product) => {
+              if (onAddToCart) {
+                onAddToCart(product)
+              }
+            }}
+          />
 
           <motion.div
             className="mt-16 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-white/80 to-slate-50/80 dark:from-slate-900/70 dark:to-slate-800/50 p-8 backdrop-blur-sm shadow-lg"
