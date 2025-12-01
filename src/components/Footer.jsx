@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -28,17 +29,17 @@ function Footer() {
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-300 transition-colors">Producto</h3>
             <ul className="mt-3 space-y-2">
-              <li><a href="/" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Inicio</a></li>
-              <li><a href="/catalogo" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Catálogo</a></li>
-              <li><a href="/ofertas" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Ofertas</a></li>
-              <li><a href="/temporada" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Temporada</a></li>
+              <li><Link to="/" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Inicio</Link></li>
+              <li><Link to="/catalogo" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Catálogo</Link></li>
+              <li><Link to="/ofertas" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Ofertas</Link></li>
+              <li><Link to="/temporada" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Temporada</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-300 transition-colors">Empresa</h3>
             <ul className="mt-3 space-y-2">
-              <li><a href="/nosotros" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Nosotros</a></li>
-              <li><a href="/carrito" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Carrito</a></li>
+              <li><Link to="/nosotros" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Nosotros</Link></li>
+              <li><Link to="/carrito" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Carrito</Link></li>
               <li><a href="/#pricing-section" className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Planes</a></li>
             </ul>
           </div>
