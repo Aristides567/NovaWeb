@@ -1,16 +1,17 @@
-# React + Vite
+Sitio web NovaWeb
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un sitio web responsivo desarrollado con React y Vite para la materia de Diseño Web Adaptable, el objetivo principal es presentar una experiencia moderna y visualmente atractiva que se adapte correctamente a distintos tamaños de pantalla (móvil, tablet y escritorio).
 
-Currently, two official plugins are available:
+El sitio incluye secciones informativas y contenido visual organizado de forma clara para el usuario, como encabezados destacados, bloques de contenido, imágenes y elementos de navegación que facilitan la exploración del sitio, en este caso la interfaz está pensada para ser sencilla, intuitiva y centrada en la presentación del contenido.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+En el desarrollo se utilizan tecnologías como lo son **React** para la construcción de componentes reutilizables y Vite como herramienta de compilación y entorno de desarrollo rápido, aparte que tambien se aplican principios de diseño responsivo mediante CSS para asegurar que la maquetación se mantenga ordenada y legible en diferentes resoluciones.
 
-## React Compiler
+Características
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Diseño Responsivo: El sitio se adapta a diferentes tamaños de pantalla (móvil, tablet y escritorio).
+- Interfaz Moderna: Se utiliza un diseño minimalista y agradable para el usuario.
+- Contenido Visual: Incluye imágenes y elementos visuales para mejorar la experiencia del usuario.
+- Navegación Intuitiva: Se proporciona una barra de navegación clara y fácil de usar.
+- Componentes Reutilizables: Se utilizan componentes reutilizables para mejorar la eficiencia del código.
+- Desarrollo Rápido: Se utiliza Vite como herramienta de compilación y entorno de desarrollo rápido.
+- Diseño Responsivo: Se utiliza CSS para asegurar que la maquetación se mantenga ordenada y legible en diferentes resoluciones.
